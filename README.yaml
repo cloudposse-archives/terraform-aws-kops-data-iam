@@ -33,9 +33,9 @@ github_repo: cloudposse/terraform-aws-kops-data-iam
 
 # Badges to display
 badges:
-  - name: "Build Status"
-    image: "https://travis-ci.org/cloudposse/terraform-aws-kops-data-iam.svg?branch=master"
-    url: "https://travis-ci.org/cloudposse/terraform-aws-kops-data-iam"
+  - name: "Codefresh Build Status"
+    image: "https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-aws-kops-data-iam?type=cf-1"
+    url: "https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d5374ccce702635b2b9d337"
   - name: "Latest Release"
     image: "https://img.shields.io/github/release/cloudposse/terraform-aws-kops-data-iam.svg"
     url: "https://github.com/cloudposse/terraform-aws-kops-data-iam/releases/latest"
@@ -76,9 +76,9 @@ description: |-
 # How to use this project
 usage: |-
   ```hcl
-  module "kops_metadata" {
+  module "kops_data_iam" {
     source       = "git::https://github.com/cloudposse/terraform-aws-kops-data-iam.git?ref=master"
-    cluster_name     = "cluster.domain.com"
+    cluster_name = "cluster.domain.com"
   }
   ```
 

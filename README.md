@@ -3,7 +3,7 @@
 
 [![Cloud Posse][logo]](https://cpco.io/homepage)
 
-# terraform-aws-kops-data-iam [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-kops-data-iam.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-kops-data-iam) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-kops-data-iam.svg)](https://github.com/cloudposse/terraform-aws-kops-data-iam/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+# terraform-aws-kops-data-iam [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-aws-kops-data-iam?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d5374ccce702635b2b9d337) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-kops-data-iam.svg)](https://github.com/cloudposse/terraform-aws-kops-data-iam/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Terraform module to lookup IAM roles within a [Kops](https://github.com/kubernetes/kops) cluster
@@ -42,10 +42,15 @@ We literally have [*hundreds of terraform modules*][terraform_modules] that are 
 
 ## Usage
 
+
+**IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/cloudposse/terraform-aws-kops-data-iam/releases).
+
+
 ```hcl
-module "kops_metadata" {
+module "kops_data_iam" {
   source       = "git::https://github.com/cloudposse/terraform-aws-kops-data-iam.git?ref=master"
-  cluster_name     = "cluster.domain.com"
+  cluster_name = "cluster.domain.com"
 }
 ```
 
@@ -69,7 +74,7 @@ Available targets:
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | cluster_name | The Kubernetes cluster name | string | - | yes |
-| enabled | Set to false to prevent the module from creating or accessing any resources | string | `true` | no |
+| enabled | Set to false to prevent the module from creating or accessing any resources | bool | `true` | no |
 
 ## Outputs
 
